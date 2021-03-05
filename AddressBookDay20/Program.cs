@@ -25,6 +25,7 @@ namespace AddressBookDay20
                 Console.WriteLine("8 View person by state or city");
                 Console.WriteLine("9 View count by state or city");
                 Console.WriteLine("10 Sort by name");
+                Console.WriteLine("11 Sort by zip, state or city");
                 Console.WriteLine("Defult Use Case is Exit");
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
@@ -87,6 +88,22 @@ namespace AddressBookDay20
                         break;
                     case 10:
                         addressBookCollection.addressBookDictionary[addressBookName].SortByFirstName();
+                        break;
+                    case 11:
+                        int Answer;
+                        Console.WriteLine("1. Sort by zip");
+                        Console.WriteLine("2. Sort by City");
+                        Console.WriteLine("3. Sort by State");
+                        Answer = Console.Read();
+                        if (Answer == 1)
+                            addressBookCollection.addressBookDictionary[addressBookName].SortByZip();
+                        else if (Answer == 2)
+                            addressBookCollection.addressBookDictionary[addressBookName].SortByCity();
+                        else if (Answer == 3)
+                            addressBookCollection.addressBookDictionary[addressBookName].SortByState();
+                        else
+                            Console.WriteLine("enter the valid number");
+                        
                         break;
                     default:
                         Console.WriteLine("exit");

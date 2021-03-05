@@ -132,9 +132,27 @@ namespace AddressBookDay20
                     Console.WriteLine("Entry Not found");
             }
         }
+        /// <summary>
+        /// UC11
+        /// </summary>
         public void SortByFirstName()
         {
             addressBook.Sort((x, y) => x.firstName.CompareTo(y.firstName));
+        }
+        /// <summary>
+        /// UC12
+        /// </summary>
+        public void SortByZip()
+        {
+            addressBook.Sort((x, y) => x.zip.CompareTo(y.zip));
+        }
+        public void SortByCity()
+        {
+            addressBook.Sort((x, y) => x.city.CompareTo(y.city));
+        }
+        public void SortByState()
+        {
+            addressBook.Sort((x, y) => x.state.CompareTo(y.state));
         }
 
     }
