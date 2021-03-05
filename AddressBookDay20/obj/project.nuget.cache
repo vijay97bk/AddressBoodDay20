@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "pvnVCrnRFu95OKVeevqQwn1CmvsHmbdumB+TPTEa8BYRNGk0pu7qzgh9y7NbwbgdECE5Aps7yjq7zy7TqYeg0g==",
+  "dgSpecHash": "x/FKy6KmeKQ7m4IzTRoNnDfW45oNjB3rJ/ae6w09k6nq+UdeWrzLWTbHGvacLdZ9dagvUEo8l2MdI2803h8/tw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Vijay Kshirasagar\\Desktop\\C# Work\\CORE\\AddressBookDay20\\AddressBookDay20\\AddressBookDay20.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Vijay Kshirasagar\\.nuget\\packages\\csvhelper\\26.0.1\\csvhelper.26.0.1.nupkg.sha512",
+    "C:\\Users\\Vijay Kshirasagar\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Vijay Kshirasagar\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

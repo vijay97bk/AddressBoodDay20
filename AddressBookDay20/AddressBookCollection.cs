@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace AddressBookDay20
@@ -77,6 +78,33 @@ namespace AddressBookDay20
             };
             Console.WriteLine("Count of  " + city + " is " + cityDictionary[city].Count);
             Console.WriteLine(" Count of " + state + " is " + stateDictionary[state].Count);
+        }
+        /// <summary>
+        /// Writes the address book collection to files. UC13
+        /// </summary>
+        public void SaveContactsToFile()
+        {
+            string folderPath = @"C:\Users\Vijay Kshirasagar\Desktop\C# Work\CORE\AddressBookDay20\AddressBookDay20";
+            foreach (var AddressBookItem in addressBookDictionary)
+            {
+                string filePath = folderPath + AddressBookItem.Key + ".txt";
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    foreach (Person person in AddressBookItem.Value.addressBook)
+                    {
+                        writer.WriteLine($"First Name : {person.firstName}");
+                        writer.WriteLine($"Last Name : {person.lastName}");
+                        writer.WriteLine($"Address : {person.address}");
+                        writer.WriteLine($"City : {person.city}");
+                        writer.WriteLine($"State : {person.state}");
+                        writer.WriteLine($"Zip : {person.zip}");
+                        writer.WriteLine($"PhoneNumber : {person.phoneNumber}");
+                        writer.WriteLine($"Email : {person.email}");
+                    }
+                }
+
+
+            }
         }
     }
 }

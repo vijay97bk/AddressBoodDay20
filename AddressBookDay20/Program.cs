@@ -26,6 +26,7 @@ namespace AddressBookDay20
                 Console.WriteLine("9 View count by state or city");
                 Console.WriteLine("10 Sort by name");
                 Console.WriteLine("11 Sort by zip, state or city");
+                Console.WriteLine("12 Save to file");
                 Console.WriteLine("Defult Use Case is Exit");
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
@@ -103,7 +104,9 @@ namespace AddressBookDay20
                             addressBookCollection.addressBookDictionary[addressBookName].SortByState();
                         else
                             Console.WriteLine("enter the valid number");
-                        
+                        break;
+                    case 12:
+                        addressBookCollection.SaveContactsToFile();
                         break;
                     default:
                         Console.WriteLine("exit");
