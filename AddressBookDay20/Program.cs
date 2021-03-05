@@ -27,6 +27,7 @@ namespace AddressBookDay20
                 Console.WriteLine("10 Sort by name");
                 Console.WriteLine("11 Sort by zip, state or city");
                 Console.WriteLine("12 Save to file");
+                Console.WriteLine("13 Read file");
                 Console.WriteLine("Defult Use Case is Exit");
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
@@ -108,6 +109,9 @@ namespace AddressBookDay20
                     case 12:
                         addressBookCollection.SaveContactsToFile();
                         break;
+                    case 13:
+                        addressBookCollection.ReadFilesToAddressBookCollection();
+                    break;
                     default:
                         Console.WriteLine("exit");
                         break;
