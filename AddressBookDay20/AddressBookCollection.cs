@@ -71,11 +71,6 @@ namespace AddressBookDay20
         }
         public void ViewCountByCityOrState(string city, string state)
         {
-            var arrayList = new ArrayList
-            {
-                "Count of " + city + " is " + cityDictionary[city].Count,
-                "Count of " + state + " is " + stateDictionary[state].Count
-            };
             Console.WriteLine("Count of  " + city + " is " + cityDictionary[city].Count);
             Console.WriteLine(" Count of " + state + " is " + stateDictionary[state].Count);
         }
@@ -87,7 +82,8 @@ namespace AddressBookDay20
             string folderPath = @"C:\Users\Vijay Kshirasagar\Desktop\C# Work\CORE\AddressBookDay20\AddressBookDay20";
             foreach (var AddressBookItem in addressBookDictionary)
             {
-                string filePath = folderPath + AddressBookItem.Key + ".txt";
+                //filePath
+                string filePath = folderPath + "AdderssBookDay20" + ".txt";
                 using (StreamWriter writer = new StreamWriter(filePath))
                 {
                     foreach (Person person in AddressBookItem.Value.addressBook)
@@ -110,8 +106,8 @@ namespace AddressBookDay20
         {
             List<Person> people = new List<Person>();
             string[] lines = File.ReadAllLines(filepath);
-            int noOfRecords = lines.Length / 8;
-            for (int i = 1; i <= noOfRecords; i++)
+            //lines.Length / 8 is total records
+            for (int i = 1; i <= lines.Length / 8; i++)
             {
                 Person person = new Person();
                 person.firstName = lines[0 * i].Split(':')[1];
@@ -127,13 +123,14 @@ namespace AddressBookDay20
             return people;
         }
 
-            public void ReadFilesToAddressBookCollection()
+        public void ReadFilesToAddressBookCollection()
         {
             string folderPath = @"C:\Users\Vijay Kshirasagar\Desktop\C# Work\CORE\AddressBookDay20\AddressBookDay20";
+            //DirectoryInfo is a class, getFiles returns list from selected dictionary
             DirectoryInfo d = new DirectoryInfo(folderPath);
-            foreach (var file in d.GetFiles("*.txt"))
+            foreach (var file in d.GetFiles("AdderssBookDay20.txt"))
             {
-                string addressBookName = file.Name.Replace(".txt", "");
+                string addressBookName = file.Name;
                 if (!this.addressBookDictionary.ContainsKey(addressBookName))
                 {
                     this.addressBookDictionary.Add(addressBookName, new AddressBook());
@@ -141,12 +138,11 @@ namespace AddressBookDay20
                     this.addressBookDictionary[addressBookName].addressBook = people;
                 }
 
-                // file.Name
             }
 
             foreach (var AddressBookItem in addressBookDictionary)
             {
-                string filePath = folderPath + AddressBookItem.Key + ".txt";
+                string filePath = folderPath + "AdderssBookDay20READ" + ".txt";
                 using (StreamWriter writer = new StreamWriter(filePath))
                 {
                     foreach (Person person in AddressBookItem.Value.addressBook)
@@ -161,8 +157,6 @@ namespace AddressBookDay20
                         writer.WriteLine($"Email : {person.email}");
                     }
                 }
-
-
             }
         }
     }
